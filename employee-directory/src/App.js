@@ -3,11 +3,13 @@ import logo from './logo.svg';
 import './App.css';
 import Directory from "./src/components/Directory.js"
 import Search from "./components/Search/Search";
-import Employee from "./components/Employee/Employee"
-// Employee
-// Navbar
-// Footer
-// List
+import Employee from "./components/Employee/Employee";
+import Navbar from "./components/Footer/Footer";
+import Footer from "./components/Footer/Footer";
+import List from "./components/List/List"
+
+http://dummy.restapiexample.com/api/v1/employees
+
 
 function App() {
   return (
