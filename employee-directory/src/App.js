@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import logo from './logo.svg';
 import './App.css';
 import Employee from "./components/Employee/Employee";
+import Wrapper from "./components/Wrapper/Wrapper";
 
 import Directory from "./src/components/Directory.js"
 import Search from "./components/Search/Search";
