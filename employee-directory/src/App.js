@@ -3,12 +3,13 @@ import logo from './logo.svg';
 import './App.css';
 import Employee from "./components/Employee/index";
 import Wrapper from "./components/Wrapper/index";
+import Footer from "./components/Footer/index";
+import Search from "./components/Search/index";
+import Navbar from "./components/Navbar/index";
+import SearchResults from "./components/SearchResults/index";
 
 import Directory from "./src/components/Directory/index";
-import Search from "./components/Search/Search/";
-import Navbar from "./components/Navbar/index";
-import Footer from "./components/Footer/index";
-import List from "./components/List/index"
+// import List from "./components/SearchResults/index"
 
 // http://dummy.restapiexample.com/api/v1/employees
 
