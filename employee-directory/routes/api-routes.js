@@ -1,4 +1,4 @@
-let API = "http://dummy.restapiexample.com/api/v1/employees";
+let db = "http://dummy.restapiexample.com/api/v1/employees";
 
 
 // var db = require("../models");

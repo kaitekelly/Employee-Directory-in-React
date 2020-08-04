@@ -8,7 +8,7 @@ import Navbar from "./components/Footer/Footer";
 import Footer from "./components/Footer/Footer";
 import List from "./components/List/List"
 
-http://dummy.restapiexample.com/api/v1/employees
+// http://dummy.restapiexample.com/api/v1/employees
 
 
 function App() {
