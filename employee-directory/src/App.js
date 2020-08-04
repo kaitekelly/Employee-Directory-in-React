@@ -2,6 +2,12 @@ import React from 'react';
 import logo from './logo.svg';
 import './App.css';
 import Directory from "./src/components/Directory.js"
+import Search from "./components/Search/Search";
+import Employee from "./components/Employee/Employee"
+// Employee
+// Navbar
+// Footer
+// List
 
 function App() {
   return (
