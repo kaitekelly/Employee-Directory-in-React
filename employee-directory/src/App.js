@@ -1,14 +1,14 @@
 import React, { Component } from 'react';
 import logo from './logo.svg';
 import './App.css';
-import Employee from "./components/Employee/Employee";
-import Wrapper from "./components/Wrapper/Wrapper";
+import Employee from "./components/Employee/index";
+import Wrapper from "./components/Wrapper/index";
 
-import Directory from "./src/components/Directory.js"
-import Search from "./components/Search/Search";
-import Navbar from "./components/Footer/Footer";
-import Footer from "./components/Footer/Footer";
-import List from "./components/List/List"
+import Directory from "./src/components/Directory/index";
+import Search from "./components/Search/Search/";
+import Navbar from "./components/Navbar/index";
+import Footer from "./components/Footer/index";
+import List from "./components/List/index"
 
 // http://dummy.restapiexample.com/api/v1/employees
 
