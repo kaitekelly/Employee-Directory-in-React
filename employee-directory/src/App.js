@@ -1,6 +1,7 @@
 import React from 'react';
 import logo from './logo.svg';
 import './App.css';
+import Directory from "./src/components/Directory.js"
 
 function App() {
   return (
