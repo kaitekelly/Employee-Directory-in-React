@@ -13,11 +13,9 @@ export const SearchResults = () => {
   const [results, setResults] = useState([]);
   const [error, setError] = useState();
 
+  useEffect();
 
-useEffect();
-
-
-const searchEmployees = () => {
+  const searchEmployees = () => {
     
 }
 
@@ -33,8 +31,6 @@ const searchEmployees = () => {
 //      event.preventDefault();
 //      this.searchEmployees(this.state.search);
 //  };
-
-
     return (
       <div>
         <Search
