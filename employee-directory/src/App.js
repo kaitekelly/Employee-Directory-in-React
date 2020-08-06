@@ -1,37 +1,35 @@
-import React, { Component } from 'react';
-import logo from './logo.svg';
+import React, { useState, useEffect } from 'react';
 import './App.css';
-import Employee from "./components/Employee/index";
-import Wrapper from "./components/Wrapper/index";
-import Footer from "./components/Footer/index";
-import Search from "./components/Search/index";
-import Navbar from "./components/Navbar/index";
-import SearchResults from "./components/SearchResults/index";
+// import Employee from "./components/Employee/index";
+// import SearchForm from "./components/Search/SearchForm";
+// import {SearchResults} from "./components/Search/SearchResults";
+import axios from "axios";
 
-import Directory from "./src/components/Directory/index";
-// import List from "./components/SearchResults/index"
+let employees = [];
 
-// http://dummy.restapiexample.com/api/v1/employees
+const App = () => {
+  const [employees, setEmployees] = useState([])
+  useEffect(() =>{
+    getData();
+  })
+  const getData = () => {
+    axios.get("https://jsonplaceholder.typicode.com/users?_limit")
+    .then(res => setEmployees(res.data))
+    .catch(error => console.log(error))
+    
+  }
 
-
-class App extends Component {
-  state = {
-    employees
-  };
-
-  removeEmployee = id => {
-    const employees = this.state.friends.filter(friend => friend.id !== id);
-
-    this.setState({ employees });
-  };
 
   render() {
-    return (
+    return ( 
+      <div>
+        App
+        </div>
       <Wrapper>
         <Title>Employee Directory</Title>
         {this.state.employees.map(employee => (
           <Employee
-          removeEmployee={this.removeEmployee}
+          // removeEmployee={this.removeEmployee}
           id={employee.id}
           key={employee.id}
           name={employee.name}
@@ -43,7 +41,7 @@ class App extends Component {
     )
   }
 
-}
+
 
 // function App() {
 //   return (
@@ -65,5 +63,11 @@ class App extends Component {
 //     </div>
 //   );
 // }
+
+  // const removeEmployee = id => {
+  //   const employees = this.state.friends.filter(friend => friend.id !== id);
+
+  //   this.setState({ employees });
+  // };
 
 export default App;
