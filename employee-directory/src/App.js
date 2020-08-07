@@ -1,15 +1,14 @@
 // import React, { useState, useEffect } from 'react';
-import React from "react;"
+import React from "react";
 import './App.css';
 import SearchContainer from "./components/SearchContainer";
+
 // import SearchForm from "./components/Search/SearchForm";
 // import {SearchResults} from "./components/Search/SearchResults";
-import axios from "axios";
-
+// import axios from "axios";
 
 function App() {
   return <SearchContainer />;
-
 }
 
 export default App;

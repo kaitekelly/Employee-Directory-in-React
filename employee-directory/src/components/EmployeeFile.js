@@ -8,25 +8,25 @@ function EmployeeFile(props) {
                 <img alt={props.name} src={props.image} />
             </div>
 
-            <div className="emp-info">
-                <ul>
+            <div>
+                <ul className="emp-info">
                     <li>
-                        <strong>Name:</strong> {props.name}
+                        <strong>Name: {props.name}</strong> 
                     </li>
                     <li>
-                        <strong>Employee ID:</strong> {props.id}
+                        <strong>Employee ID: {props.id}</strong> 
                     </li>
                     <li>
-                        <strong>Email Address:</strong> {props.email}
+                        <strong>Email Address: {props.email}</strong> 
                     </li>
                     <li>
-                        <strong>Phone Number:</strong> {props.phone}
+                        <strong>Phone Number: {props.phone}</strong> 
                     </li>
                 </ul>
             </div>
-            <span onClick={() => props.removeEmployee(props.id)} className="remove">
+            {/* <span onClick={() => props.removeEmployee(props.id)} className="remove">
         𝘅
-      </span>
+      </span> */}
         </div>
     )
 }
