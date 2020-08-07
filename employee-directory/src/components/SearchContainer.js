@@ -4,20 +4,24 @@ import API from "../utils/API";
 import EmployeeFile from "./EmployeeFile";
 // import SearchForm from "./SearchForm";
 import SearchResults from "./SearchResults";
+import SearchForm from "./SearchForm";
 
 
 class SearchContainer extends Component {
-    state = {
-        result: {},
-        search: ""
-    };
-
+    constructor(props) {
+        super(props);
+        this.state = {
+            search: "",
+            results: [],
+            employees: [],
+            error: null
+        };
+    }
+    
     componentDidMount() {
         API.searchEmployees()
-        console.log()
         .then(res => this.setState({ employees: res.data.results }))
         .catch(err => console.log(err));
-        
     }
 
     handleInputChange = event => {
@@ -39,21 +43,15 @@ class SearchContainer extends Component {
         return(
             <div className="employeefile">
                 <h1>Employee Directory</h1>
-            <EmployeeFile
-            name={this.state.result.name}
-            id={this.state.result.id}
-            email={this.state.result.email}
-            phone={this.state.result.phone}
+            {/* <SearchForm
+                employees={this.state.employees}
+                /> */}
+            <SearchResults 
+            employees={this.state.employees} 
             />
-            <SearchResults results={this.state.results} />
             </div>
-        )
-   
+        );
     }
-
-
-
-
 }
 
 export default SearchContainer;
