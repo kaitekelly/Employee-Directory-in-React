@@ -19,7 +19,7 @@ class SearchContainer extends Component {
     }
     
     componentDidMount() {
-        API.searchEmployees()
+        API.searchForm()
         .then(res => this.setState({ employees: res.data.results }))
         .catch(err => console.log(err));
     }
@@ -30,11 +30,11 @@ class SearchContainer extends Component {
         this.setState({
             [name]: value
         });
-    };
+    }
 
     handleFormSubmit = event => {
         event.preventDefault();
-        this.searchEmployees(this.state.search);
+        this.searchForm(this.state.search);
     }
 
     render() {
@@ -43,11 +43,16 @@ class SearchContainer extends Component {
         return(
             <div className="employeefile">
                 <h1>Employee Directory</h1>
-            {/* <SearchForm
+            <SearchForm
                 employees={this.state.employees}
-                /> */}
+                handleInputChange={this.handleInputChange}
+                handleFormSubmit={this.handleFormSubmit}
+            />
             <SearchResults 
             employees={this.state.employees} 
+            />
+            <EmployeeFile
+                employees={this.state.employees}
             />
             </div>
         );

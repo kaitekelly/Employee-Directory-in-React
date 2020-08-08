@@ -1,4 +1,4 @@
-import API from "../utils/API";
+// import API from "../utils/API";
 import React from "react";
 import "./style.css";
 
@@ -6,13 +6,14 @@ import "./style.css";
 function SearchResults(props) {
   return(
     <ul className="list-group search-results">
-      {props.employees.map(result => (
+      {props.employees.map(employee => (
         <ul key={employee} className="list-group-item">
-          <h1>Employee Information:</h1>
+          <h3>Employee Information:</h3>
           {/* <img alt="Employee" src={result} className="img-fluid" /> */}
           <li>{employee.name.first} </li>
           <li>{employee.name.last} </li>
-          <li>{employee.name.first} </li>
+          <li>{employee.phone} </li>
+          <li>{employee.email} </li>
           <li>{employee.name.first} </li>
         </ul>
       ))}
