@@ -5,6 +5,7 @@ import API from "../utils/API";
 // import SearchForm from "./SearchForm";
 import SearchResults from "./SearchResults";
 import SearchForm from "./SearchForm";
+// import SortBtn from "./SortBtn";
 
 
 class SearchContainer extends Component {
@@ -44,10 +45,10 @@ class SearchContainer extends Component {
 
     render() {
 
-        const {employees, sortType} = this.state;
-        const sorted = employees.sort( (a, b) => {
+        const {employees, sortType } = this.state;
+        const sorted = employees.sort((a, b) => {
             const isReversed = (sortType === 'asc') ? 1 : -1;
-            return isReversed * a.name.localCompare(b.name.first)
+            return isReversed * a.name.first.localeCompare(b.name.first)
         });
 
         console.log(this.state.employees);
@@ -67,12 +68,19 @@ class SearchContainer extends Component {
             {/* <EmployeeFile
                 employees={this.state.employees}
             /> */}
-                <button type="submit" onClick={() => this.onSort('asc')} className="btn btn-success">
+
+            {/* <SortBtn> */}
+                <button type="submit" onClick={() => this.onSort('asc')} 
+                employee={employees} 
+                onSort={this.onSort} 
+                sortType={sorted} 
+                className="btn btn-success">
                     Sort by ASC Order
                 </button>
                 <button type="submit" onClick={() => this.onSort('desc')} className="btn btn-success">
                     Sort by DESC Order
                 </button>
+            {/* </SortBtn> */}
             </div>
         );
     }
