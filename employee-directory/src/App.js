@@ -2,13 +2,22 @@
 import React from "react";
 import './App.css';
 import SearchContainer from "./components/SearchContainer";
+// import Title from "./components/Title";
 
 // import SearchForm from "./components/Search/SearchForm";
 // import {SearchResults} from "./components/Search/SearchResults";
 // import axios from "axios";
 
 function App() {
-  return <SearchContainer />;
+  return <SearchContainer/>
+  // return (
+  //   <div>
+  //     {/* <Title></Title> */}
+  //     <SearchContainer>
+
+  //     </SearchContainer>
+  // </div>
+  // )
 }
 
 export default App;

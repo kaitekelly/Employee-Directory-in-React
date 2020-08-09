@@ -14,7 +14,8 @@ function SearchResults(props) {
           <li>{employee.name.last} </li>
           <li>{employee.phone} </li>
           <li>{employee.email} </li>
-          <li>{employee.name.first} </li>
+          {/* <li>{employee.dob} </li> */}
+          {/* <img alt="employee-pict">  {employee.picture} </img> */}
         </ul>
       ))}
       </ul>
