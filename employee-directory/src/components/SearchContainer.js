@@ -1,7 +1,7 @@
 import React, { Component } from "react";
 // import Title from "./Title";
 import API from "../utils/API";
-import EmployeeFile from "./EmployeeFile";
+// import EmployeeFile from "./EmployeeFile";
 // import SearchForm from "./SearchForm";
 import SearchResults from "./SearchResults";
 import SearchForm from "./SearchForm";
@@ -14,6 +14,7 @@ class SearchContainer extends Component {
             search: "",
             results: [],
             employees: [],
+            sortType: "asc",
             error: null
         };
     }
@@ -37,7 +38,18 @@ class SearchContainer extends Component {
         this.searchForm(this.state.search);
     }
 
+    onSort = sortType =>{
+        this.setState({sortType})
+    }
+
     render() {
+
+        const {employees, sortType} = this.state;
+        const sorted = employees.sort( (a, b) => {
+            const isReversed = (sortType === 'asc') ? 1 : -1;
+            return isReversed * a.name.localCompare(b.name.first)
+        });
+
         console.log(this.state.employees);
         // employees = (this.state.employees);
         return(
@@ -52,9 +64,15 @@ class SearchContainer extends Component {
             <SearchResults 
             employees={this.state.employees} 
             />
-            <EmployeeFile
+            {/* <EmployeeFile
                 employees={this.state.employees}
-            />
+            /> */}
+                <button type="submit" onClick={() => this.onSort('asc')} className="btn btn-success">
+                    Sort by ASC Order
+                </button>
+                <button type="submit" onClick={() => this.onSort('desc')} className="btn btn-success">
+                    Sort by DESC Order
+                </button>
             </div>
         );
     }
