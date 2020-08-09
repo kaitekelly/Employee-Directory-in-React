@@ -2,7 +2,6 @@
 import React from "react";
 import './App.css';
 import SearchContainer from "./components/SearchContainer";
-// import Title from "./components/Title";
 
 // import SearchForm from "./components/Search/SearchForm";
 // import {SearchResults} from "./components/Search/SearchResults";

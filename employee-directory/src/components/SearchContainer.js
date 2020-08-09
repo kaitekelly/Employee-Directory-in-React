@@ -43,7 +43,7 @@ class SearchContainer extends Component {
         return(
             <div className="employeefile">
                 <h1>Employee Directory</h1>
-        {/* <Title>{}</Title> */}
+            
             <SearchForm
                 employees={this.state.employees}
                 handleInputChange={this.handleInputChange}
