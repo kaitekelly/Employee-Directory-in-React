@@ -16,8 +16,11 @@ class SearchContainer extends Component {
             results: [],
             employees: [],
             sortType: "asc",
+            filtered: [],
             error: null
         };
+
+        this.handleInputChange = this.handleInputChange.bind(this);
     }
     
     componentDidMount() {
@@ -27,11 +30,42 @@ class SearchContainer extends Component {
     }
 
     handleInputChange = event => {
-        const value = event.target.value;
-        const name = event.target.name;
-        this.setState({
-            [name]: value
-        });
+        let currentList = [];
+        let newList = [];
+
+        if (event.target.value !== ""){
+            currentList = this.props.employees;
+
+            newList = currentList.filter(employee => {
+                const lc = employee.name.first.toLowerCase();
+                const filter = event.target.value.toLowerCase();
+                return lc.includes(filter);
+            });
+        } else {
+            newList = this.props.employees;
+        } 
+            this.setState({
+                filtered: newList
+            });
+        // event.preventDefault();
+        // const searchName = event.target.value;
+        // // const name = event.target.name;
+        // // this.setState({
+        // //     [name]: value
+        // // });
+        // const filteredEmployees = this.state.employees.filter( employee => {
+        //     return employee.name.toLowerCase().indexOf(searchName.toLowerCase() ) !== -1;
+        // })
+        // if (!searchName) {
+        //     this.setState({searchName, message: ''});
+        // } else {
+        //     this.setState({ results: filteredEmployees });
+        // }
+
+
+        //this code searches employee by name 
+        // const {search} = this.state;
+
     }
 
     handleFormSubmit = event => {
@@ -43,8 +77,18 @@ class SearchContainer extends Component {
         this.setState({sortType})
     }
 
+    onChange = e =>{
+        this.setState({ search : e.target.value });
+    }
+
     render() {
 
+
+        // if( search !== "" && employees.name.first.toLowerCase().indexOf( search.toLowerCase ) === -1) {
+        //     return null
+        // }
+
+        // this code sorts the employee list in desc and asc order
         const {employees, sortType } = this.state;
         const sorted = employees.sort((a, b) => {
             const isReversed = (sortType === 'asc') ? 1 : -1;
