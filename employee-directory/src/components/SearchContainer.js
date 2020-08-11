@@ -1,11 +1,7 @@
 import React, { Component } from "react";
-// import Title from "./Title";
 import API from "../utils/API";
-// import EmployeeFile from "./EmployeeFile";
-// import SearchForm from "./SearchForm";
 import SearchResults from "./SearchResults";
 import SearchForm from "./SearchForm";
-// import SortBtn from "./SortBtn";
 
 
 class SearchContainer extends Component {
@@ -46,25 +42,6 @@ class SearchContainer extends Component {
             this.setState({
                 filtered: newList
             });
-        // event.preventDefault();
-        // const searchName = event.target.value;
-        // // const name = event.target.name;
-        // // this.setState({
-        // //     [name]: value
-        // // });
-        // const filteredEmployees = this.state.employees.filter( employee => {
-        //     return employee.name.toLowerCase().indexOf(searchName.toLowerCase() ) !== -1;
-        // })
-        // if (!searchName) {
-        //     this.setState({searchName, message: ''});
-        // } else {
-        //     this.setState({ results: filteredEmployees });
-        // }
-
-
-        //this code searches employee by name 
-        // const {search} = this.state;
-
     }
 
     handleFormSubmit = event => {
@@ -81,13 +58,6 @@ class SearchContainer extends Component {
     }
 
     render() {
-
-
-        // if( search !== "" && employees.name.first.toLowerCase().indexOf( search.toLowerCase ) === -1) {
-        //     return null
-        // }
-
-        // this code sorts the employee list in desc and asc order
         const {employees, sortType } = this.state;
         const sorted = employees.sort((a, b) => {
             const isReversed = (sortType === 'asc') ? 1 : -1;
@@ -95,7 +65,6 @@ class SearchContainer extends Component {
         });
 
         console.log(this.state.employees);
-        // employees = (this.state.employees);
         return(
             <div className="employeefile">
                 <h1>Employee Directory</h1>
@@ -108,11 +77,7 @@ class SearchContainer extends Component {
             <SearchResults 
             employees={this.state.filtered} 
             />
-            {/* <EmployeeFile
-                employees={this.state.employees}
-            /> */}
 
-            {/* <SortBtn> */}
                 <button type="submit" onClick={() => this.onSort('asc')} 
                 employee={employees} 
                 onSort={this.onSort} 
@@ -123,7 +88,6 @@ class SearchContainer extends Component {
                 <button type="submit" onClick={() => this.onSort('desc')} className="btn btn-success">
                     Sort by DESC Order
                 </button>
-            {/* </SortBtn> */}
             </div>
         );
     }

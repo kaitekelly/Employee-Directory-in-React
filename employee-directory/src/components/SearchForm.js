@@ -1,5 +1,4 @@
 import React from "react";
-// import {handleInputChange} from "./SearchContainer";
 import "./style.css";
 
 function SearchForm(props) {
@@ -22,9 +21,6 @@ function SearchForm(props) {
                         <option value={employee} key={employee} />
                     ))}
                 </datalist>
-                <button type="submit" onClick={props.handleFormSubmit} className="btn btn-success">
-                    Search
-                </button>
             </div>
         </form>
     )
