@@ -20,12 +20,11 @@ class SearchContainer extends Component {
             error: null
         };
 
-        this.handleInputChange = this.handleInputChange.bind(this);
     }
     
     componentDidMount() {
         API.searchForm()
-        .then(res => this.setState({ employees: res.data.results }))
+        .then(res => this.setState({ employees: res.data.results, filtered: res.data.results }))
         .catch(err => console.log(err));
     }
 
@@ -34,7 +33,7 @@ class SearchContainer extends Component {
         let newList = [];
 
         if (event.target.value !== ""){
-            currentList = this.props.employees;
+            currentList = this.state.employees;
 
             newList = currentList.filter(employee => {
                 const lc = employee.name.first.toLowerCase();
@@ -42,7 +41,7 @@ class SearchContainer extends Component {
                 return lc.includes(filter);
             });
         } else {
-            newList = this.props.employees;
+            newList = this.state.employees;
         } 
             this.setState({
                 filtered: newList
@@ -107,7 +106,7 @@ class SearchContainer extends Component {
                 handleFormSubmit={this.handleFormSubmit}
             />
             <SearchResults 
-            employees={this.state.employees} 
+            employees={this.state.filtered} 
             />
             {/* <EmployeeFile
                 employees={this.state.employees}

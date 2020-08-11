@@ -1,5 +1,5 @@
 import React from "react";
-import {handleInputChange} from "./SearchContainer";
+// import {handleInputChange} from "./SearchContainer";
 import "./style.css";
 
 function SearchForm(props) {
@@ -8,7 +8,7 @@ function SearchForm(props) {
             <div className="form-group input">
                 <label htmlFor="employee">Employee Name: </label>
                 <input
-                onChange={this.handleInputChange}
+                onChange={props.handleInputChange}
                 value={props.search}
                 name="employee"
                 list="employees"
