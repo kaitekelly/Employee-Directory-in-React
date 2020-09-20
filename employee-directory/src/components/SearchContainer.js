@@ -2,7 +2,7 @@ import React, { Component } from "react";
 import API from "../utils/API";
 import SearchResults from "./SearchResults";
 import SearchForm from "./SearchForm";
-
+import { Container } from "react-bootstrap";
 
 class SearchContainer extends Component {
     constructor(props) {
@@ -67,6 +67,7 @@ class SearchContainer extends Component {
         console.log(this.state.employees);
         return(
             <div className="employeefile">
+            <Container>
                 <h1>Employee Directory</h1>
             
             <SearchForm
@@ -88,6 +89,7 @@ class SearchContainer extends Component {
                 <button type="submit" onClick={() => this.onSort('desc')} className="btn btn-success">
                     Sort by DESC Order
                 </button>
+                </Container>
             </div>
         );
     }
