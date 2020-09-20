@@ -1,3 +1,29 @@
 .list-group-item {
     padding: 15pt;
 }
+
+.btn {
+    color: white;
+    margin: 5%;
+    background-color: #46ACC2;
+}
+
+h1 {
+    color: #172A3A;
+    padding-top: 40pt;
+    padding-bottom: 20pt;
+    font-size: 46pt;
+
+}
+
+.employeefile {
+    background-color: #F1FFFA;
+}
+
+tr {
+    width: col-4;
+}
+
+th {
+margin: 100pt;
+}

@@ -3,6 +3,7 @@ import API from "../utils/API";
 import SearchResults from "./SearchResults";
 import SearchForm from "./SearchForm";
 import { Container } from "react-bootstrap";
+import "./style.css";
 
 class SearchContainer extends Component {
     constructor(props) {

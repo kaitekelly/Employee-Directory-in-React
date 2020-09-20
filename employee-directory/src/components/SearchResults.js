@@ -1,14 +1,16 @@
 import React from "react";
+import { Table } from "react-bootstrap";
 import "./style.css";
 
 
 function SearchResults(props) {
   return(
               <div>
+              <Table>
                 <table className="list-group search-results">
                 <thead>
-                <tr>
-                    <th>Picture</th>
+                <tr className="table-header">
+                    <th className="th">Picture</th>
                     <th>Name</th>
                     <th>Phone</th>
                     <th>Email</th>
@@ -16,7 +18,7 @@ function SearchResults(props) {
                 </thead>
                     {props.employees.map(employee => (
                       <tbody key={employee} className="list-group-item">
-                        <tr>Employee Information:</tr>
+                        <tr>  </tr>
                         <td><img alt="employee-pic" src={employee.picture.medium} className="img-fluid" /></td>
                         <td>{employee.name.first} </td>
                         <td>{employee.name.last} </td>
@@ -26,6 +28,7 @@ function SearchResults(props) {
                       
                     ))}
                 </table>
+                </Table>
             </div>
 
   );
