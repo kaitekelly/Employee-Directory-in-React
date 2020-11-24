@@ -10,7 +10,7 @@ function SearchForm(props) {
                 onChange={props.handleInputChange}
                 value={props.search}
                 name="employee"
-                list="employees"
+                // list="employees"
                 type="text"
                 className="form-control"
                 placeholder="Type in an employee name"
